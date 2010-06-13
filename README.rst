@@ -8,7 +8,7 @@ Usage
       <script type="text/javascript" src="jquery-x.x.x.js"></script>
       <script type="text/javascript" src="jquery.browsersupport-x.x.js"></script>
 
-2. Run the ``$.featureSupport()`` function on the document ready event::
+2. Run the ``$.placeholder()`` function on the document ready event::
    
       $(document).ready(function(){
          $('input#search').placeholder();
