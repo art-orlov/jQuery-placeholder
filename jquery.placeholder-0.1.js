@@ -13,11 +13,17 @@
 				if(!settings['placeholderSupport'] && ($(this).val() == this.defaultValue)) $(this).val('');
 				if(settings['onClass']) $(this).addClass(settings['onClass']);
 				if(settings['offClass']) $(this).removeClass(settings['offClass']);
+				/* fix password fields */
 			}).bind('blur', function(){
-				if(!settings['placeholderSupport'] && !$(this).val().length) $(this).val(this.defaultValue);
-				if(settings['onClass']) $(this).removeClass(settings['onClass']);
-				if(settings['offClass']) $(this).addClass(settings['offClass']);
+				if(!settings['placeholderSupport'] && !$(this).val().length) {
+					$(this).val(this.defaultValue);
+					if(settings['onClass']) $(this).removeClass(settings['onClass']);
+					if(settings['offClass']) $(this).addClass(settings['offClass']);
+				}
 			});
+			
+			/* place placeholder text within text field if there is no native support */
+			if(!settings['placeholderSupport']) $(this).blur();
 		});
 	};
 })(jQuery);
